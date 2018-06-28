@@ -11,17 +11,17 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class MainActivity extends Activity {
 
 
     private ListView contactListView;
     private FirebaseListAdapter<Contact> firebaseAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Get the app wide shared variables
         MyApplicationData appData = (MyApplicationData)getApplication();
 
@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
         });
 
     }
+
 
     public void createContactButton(View v)
     {
