@@ -39,6 +39,8 @@ public class MainActivity extends Activity {
             protected void populateView(View v, Contact model, int position) {
                 TextView contactName = (TextView)v.findViewById(android.R.id.text1);
                 contactName.setText(model.name);
+                // notify its changed
+                firebaseAdapter.notifyDataSetChanged();
             }
         };
         contactListView.setAdapter(firebaseAdapter);
@@ -50,6 +52,7 @@ public class MainActivity extends Activity {
                 showDetailView(person);
             }
         });
+
     }
 
     public void createContactButton(View v)
